@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/dcj/miniconda3/bin/python
 # -*- coding: utf-8 -*-
 
 import tarfile

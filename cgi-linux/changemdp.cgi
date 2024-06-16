@@ -1,4 +1,4 @@
-#!C:\Users\CJ\AppData\Local\Programs\Python\Python39\python.exe
+#!/home/dcj/miniconda3/bin/python
 # -*- coding: utf-8 -*-
 
 import sys
@@ -8,7 +8,7 @@ from io import StringIO
 import json
 import cgi
 
-os.chdir("D:/apache/Apache24/htdocs/usr")
+os.chdir("/var/www/html/usr")
 sys.stdout.write("Content-Type: text/plain\n\n")
 sys.stdout.flush()
 def read_mdp_file(file_path):
@@ -38,6 +38,6 @@ def change_nsteps_in_directory(directory_path, new_value):
 with open("usr.json","r",encoding='utf-8') as usr_conf:
     f = usr_conf.read()
     usr_data = json.loads(f)
-directory_path = 'D:/apache/Apache24/htdocs/usr'
+directory_path = '/var/www/html/usr'
 new_nsteps_value = usr_data.get("nstep")
 change_nsteps_in_directory(directory_path, new_nsteps_value)

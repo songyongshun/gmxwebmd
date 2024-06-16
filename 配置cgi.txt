@@ -1,0 +1,23 @@
+apache配置支持cgi
+
+需要注意的一点是apache2.4要支持cgi需要将conf/httpd.conf中的这一行注释取消。
+
+`
+LoadModule cgid module modules/mod cgid.so`
+同时，在cgi-bin目录的设置如下:
+
+`
+<Directory "/XXX/apache2/cgi-bin">
+    AllowOverride None
+    Options +ExecCGI
+    AddHandler cgi-script .cgi
+    Require all granted
+</Directory>
+`
+
+这样配置好后就可以调用cg:程序了。下面是一个python cgi:程序，在浏览器打开HTTP://localhost/cgi-bin/test.cgi即可打印输出语句。
+
+`
+#!/usr/bin/python
+print "content-type:text/html\r\n\r\n"
+`

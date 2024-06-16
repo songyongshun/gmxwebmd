@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/dcj/miniconda3/bin/python
 
 import sys
 import os
@@ -12,7 +12,7 @@ sys.stdout.write("Content-Type: text/plain\n\n")
 sys.stdout.flush()
 
 os.chdir("/var/www/html/")
-subprocess.run('ls', shell=True)
-subprocess.run('rm -r /var/www/html/usr', shell=True)
-subprocess.run('cp -r /var/www/html/usr-backup /var/www/html/usr', shell=True)
-subprocess.run('ls', shell=True)
+subprocess.run('rm -rf usr', shell=True)
+subprocess.run('mkdir usr',shell=True)
+subprocess.run('cp -r usr-backup/* usr/', shell=True)
+subprocess.run('chmod -R 777 usr', shell=True)
